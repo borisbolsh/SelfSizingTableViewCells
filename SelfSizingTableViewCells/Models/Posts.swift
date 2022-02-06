@@ -1,7 +1,7 @@
 import Foundation
 
-struct Posts: Decodable {
-  let post: [Post]
+struct PostsResponse: Decodable {
+  let posts: [Post]
 }
 
 struct Post: Decodable {

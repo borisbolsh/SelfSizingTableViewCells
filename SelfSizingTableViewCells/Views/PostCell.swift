@@ -11,6 +11,7 @@ final class PostCell: UITableViewCell {
   private let textTitle: UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
+    label.font = UIFont.preferredFont(forTextStyle: .title1)
     label.lineBreakMode = .byWordWrapping
     return label
   }()
@@ -18,6 +19,7 @@ final class PostCell: UITableViewCell {
   private let textDescription: UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
+    label.font = UIFont.preferredFont(forTextStyle: .body)
     label.lineBreakMode = .byWordWrapping
     return label
   }()
@@ -61,8 +63,6 @@ final class PostCell: UITableViewCell {
   func configurate(title: String, description: String) {
     textTitle.text = title
     textDescription.text = description
-
-    print("title is \(title) dest is \(description)")
   }
 
 }
