@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController {
 
   private let tableView = UITableView()
-  let posts: [Posts] = []
+  private let posts: [Posts] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -11,9 +11,9 @@ class ViewController: UIViewController {
     setupUI()
   }
 
-
 }
 
+// MARK: Setup view
 extension ViewController {
   private func setupUI() {
     view.addSubview(tableView)
@@ -24,7 +24,8 @@ extension ViewController {
 
     tableView.register(PostCell.self, forCellReuseIdentifier: String(describing: PostCell.self))
     tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 200
+    tableView.estimatedRowHeight = 340
+
   }
 }
 
@@ -37,7 +38,7 @@ extension ViewController: UITableViewDataSource {
 
     let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostCell.self), for: indexPath) as! PostCell
 
-    cell.configurate(title: "Test", description: "Test test test Test test test Test test test Test test test Test test test")
+    cell.configurate(title: "John Doe Sample Title", description: "Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test Test test test")
     return cell
   }
 
